@@ -1,0 +1,231 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #240046, #7b2cbf, #c77dff);
+    color: #4b176b;
+}
+
+.background-hearts {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.notebook {
+    width: 100%;
+    max-width: 650px;
+    min-height: 530px;
+    padding: 25px;
+    background: #fffaff;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px #16002c80;
+    position: relative;
+    border-left: 12px solid #9d4edd;
+}
+
+.book-top,
+.book-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.book-top {
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #c77dff;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+#musicButton {
+    background: #f0d9ff;
+    color: #7026a5;
+    padding: 9px 13px;
+    border-radius: 20px;
+}
+
+.page {
+    display: none;
+    min-height: 380px;
+    padding: 35px 25px;
+    background: repeating-linear-gradient(
+        transparent,
+        transparent 35px,
+        #eadcf5 36px
+    );
+}
+
+.page.active {
+    display: block;
+    animation: appear 0.4s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateX(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.cover {
+    text-align: center;
+    padding-top: 35px;
+}
+
+.small-text,
+.page-number {
+    color: #9b5bc1;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(35px, 8vw, 55px);
+    color: #7026a5;
+    line-height: 1.2;
+}
+
+h1 span {
+    color: #c77dff;
+}
+
+.subtitle {
+    margin: 20px 0;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.flower {
+    font-size: 45px;
+    margin: 20px;
+}
+
+.cover > p:last-of-type {
+    margin: 15px 0 25px;
+}
+
+.next-button {
+    padding: 12px 22px;
+    background: #8a2be2;
+    color: white;
+    border-radius: 25px;
+    font-size: 15px;
+}
+
+.page-content {
+    padding-top: 30px;
+    line-height: 1.8;
+}
+
+h2 {
+    font-size: 29px;
+    color: #7026a5;
+    margin-bottom: 25px;
+}
+
+.page-content p:not(.page-number) {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #963dcc;
+    font-size: 19px;
+    margin-top: 25px;
+    font-style: italic;
+}
+
+.signature {
+    text-align: right;
+    color: #963dcc;
+    font-style: italic;
+}
+
+.book-bottom {
+    border-top: 1px dashed #c77dff;
+    padding-top: 18px;
+}
+
+.book-bottom button {
+    background: #f0d9ff;
+    color: #7026a5;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+#pageDots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #dfc0f5;
+}
+
+.dot.active {
+    background: #8a2be2;
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 12px;
+    }
+
+    .notebook {
+        padding: 15px;
+        min-height: 550px;
+    }
+
+    .book-top {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .page {
+        padding: 25px 12px;
+        min-height: 400px;
+    }
+
+    .page-content p:not(.page-number) {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .book-bottom button {
+        padding: 9px;
+        font-size: 12px;
+    }
+}
